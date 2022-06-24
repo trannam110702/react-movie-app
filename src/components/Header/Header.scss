@@ -1,0 +1,26 @@
+@use "../../scss/" as *;
+.header {
+    @include flex(center,space-between);
+    height: $header-height;
+    padding: 0 32px;
+}
+.h-left {
+    @include flex(center, space-between);
+    gap: 10px;
+}
+.h-logo {
+
+}
+.h-brand {
+    font-size: 2.5rem;
+    font-weight: 600;
+}
+.h-right {
+    font-size: 1.5rem;
+    font-weight: 700;
+    @include flex(center, space-between);
+    gap: 32px;
+}
+.h-link {
+    line-height: 46px;
+}

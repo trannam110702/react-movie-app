@@ -29,7 +29,7 @@ body {
 }
 a {
     text-decoration: none;
-    color: unset;
+    color: inherit;
 }
 @media (hover: hover) {
     a:hover {
