@@ -1,0 +1,15 @@
+@use "../../scss/" as *;
+.trailer-modal {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    @include overlay();
+    z-index: 100;
+    overflow: auto;
+    visibility: hidden;
+    &.active {
+        visibility: visible;
+    }
+}

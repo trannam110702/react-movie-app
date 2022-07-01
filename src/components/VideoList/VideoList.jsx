@@ -10,7 +10,6 @@ const VideoList = ({ category, id }) => {
     };
     getVideos();
   }, []);
-  console.log(videos);
   return (
     <div className="container videolist">
       {videos.map((video, index) => {

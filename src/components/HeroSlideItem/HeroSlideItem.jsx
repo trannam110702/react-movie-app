@@ -2,10 +2,10 @@ import React from "react";
 import apiConfig from "../../api/apiConfig";
 import "./HeroSlideItem.scss";
 import { Button, OutlineButton } from "../Button/Button";
-
-import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 const HeroSlideItem = ({ movieInfo }) => {
   const background = apiConfig.originalImage(movieInfo.backdrop_path);
+  const navigate = useNavigate();
   return (
     <div
       className="hero-slide__item"
@@ -16,8 +16,20 @@ const HeroSlideItem = ({ movieInfo }) => {
           <h2 className="title">{movieInfo.title}</h2>
           <div className="overview">{movieInfo.overview}</div>
           <div className="buttons">
-            <Button>Watch now</Button>
-            <OutlineButton>Watch trailer</OutlineButton>
+            <Button
+              onClick={() => {
+                navigate(`/movie/${movieInfo.id}`);
+              }}
+            >
+              Watch now
+            </Button>
+            <OutlineButton
+              onClick={() => {
+                navigate(`/movie/${movieInfo.id}`);
+              }}
+            >
+              Watch trailer
+            </OutlineButton>
           </div>
         </div>
         <div className="hero-slide__item__content__poster">

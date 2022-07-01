@@ -3,6 +3,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper";
 import tmdbApi, { movieType } from "../../api/tmdbApi";
 import HeroSlideItem from "../HeroSlideItem/HeroSlideItem";
+import TrailerModal from "../TrailerModal/TrailerModal";
 
 import "swiper/css";
 import "./HeroSlide.scss";
@@ -24,12 +25,13 @@ const HeroSlide = () => {
       modules={[Autoplay]}
       slidesPerView={1}
       grabCursor={true}
-      // autoplay={{ delay: 3000 }}
+      autoplay={{ delay: 3000 }}
     >
       {movies.map((movie, index) => {
         return (
           <SwiperSlide key={index}>
             <HeroSlideItem movieInfo={movie}></HeroSlideItem>
+            <TrailerModal id={movie.id} />
           </SwiperSlide>
         );
       })}
