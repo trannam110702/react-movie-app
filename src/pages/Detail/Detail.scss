@@ -1,0 +1,75 @@
+@use "../../scss/" as *;
+.detail {
+    &__background {
+        height: 50vh;
+        background-size: cover;
+        background-position: center;
+        position: relative;
+        &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            @include overlay();
+        }
+        &::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 100px;
+            background-image: linear-gradient(360deg, $body-bg, rgba($black, 0));
+        }
+    }
+    &__content{
+        @include flex(flex-start, flex-start);
+        max-width: 1260px;
+        padding: 0 2rem;
+        position: relative;
+        margin-top: -200px;
+        margin-bottom: 3rem;
+        .poster {
+            flex: 1;
+            @include mobile {
+                display: none;
+            }
+            .img {
+                background-size: cover;
+                background-position: center;
+                padding-top: 150%;
+                border-radius: $border-radius;
+            }
+        }
+        .info {
+            flex : 2;
+            padding: 0 2rem;
+            .title{
+                font-size: 4rem;
+                font-weight: 700;
+                line-height: 1;
+                margin-bottom: 2rem;
+            }
+            .genres {
+                display: flex;
+                margin-bottom: 2rem;
+                flex-wrap: wrap;
+                .genre {
+                    padding: 5px 20px;
+                    margin: 5px;
+                    border-radius: $border-radius;
+                    border: 2px solid white;
+                    background-color: $black;
+                    color: white;
+                }
+            }
+            .overview {
+                font-size: 1rem;
+                font-size: 400;
+                margin-bottom: 2rem;
+            }
+
+        }
+    }
+}

@@ -1,0 +1,41 @@
+@use "../../scss/" as *;
+.movie-grid {
+    &__list {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 20px;
+        margin-bottom: 3rem;
+        .item:hover {
+            .movie-card {
+                background-size: 110%;
+            }
+        }
+    }
+    &__search {
+        position: relative;
+        margin-bottom: 3rem;
+        @include flex(center, unset);
+        input {
+            border-radius: $border-radius;
+            background-color: black;
+            padding: 0.5rem 12rem 0.5rem 1.8rem;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: white;
+            border: none;
+            height: calc(2.5rem + 8px);
+            min-width: 250px;
+        }
+        button {
+            margin: 0;
+            transform: translateX(-100%);
+            a:hover {
+                color: initial;
+            }
+        }
+    }
+    button.--loadmore {
+        display: block;
+        margin: auto;
+    }
+}

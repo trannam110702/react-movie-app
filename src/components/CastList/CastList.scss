@@ -1,0 +1,19 @@
+@use "../../scss/" as *;
+.castlist {
+    h2 {
+        margin-bottom: 10px
+    }
+    .content {
+        @include flex(unset,unset);
+        gap: 10px;
+        flex-wrap: wrap;
+        .cast {
+            width: 90px;
+            .img {
+                padding-top: 150%;
+                background-size: cover;
+                background-position: center;
+            }
+        }
+    }
+}

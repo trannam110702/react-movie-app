@@ -1,0 +1,25 @@
+@use "../../scss/" as *;
+.footer {
+    background-size: cover;
+    padding: 6rem 2rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+    &__content {
+        @include flex(center,center);
+        flex-direction: column;
+        gap: 1rem;
+        &__logo {
+            @include flex(center, space-between);
+            gap: 10px;
+        }
+        &__menus {
+            @include flex(unset, unset);
+            gap: 1rem;
+            .footer__content__menu{
+                @include flex(unset, unset);
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+    }
+}
